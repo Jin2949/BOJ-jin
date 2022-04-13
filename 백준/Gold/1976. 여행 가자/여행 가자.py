@@ -4,9 +4,7 @@ def find(x):
     return parent[x]
 
 def union(x,y):
-    x= find(x)
-    y= find(y)
-    parent[max(x,y)]= min(x,y)
+    parent[find(y)]= find(x)
 
 N = int(input())
 M = int(input())
@@ -22,9 +20,7 @@ for i in range(1,N+1):
 trip_lst = list(map(int,input().split()))
 result = set([find(i) for i in trip_lst])
 
-if len(result) != 1:
+if len(result) >=2:
     print('NO')
 else:
     print('YES')
-
-
