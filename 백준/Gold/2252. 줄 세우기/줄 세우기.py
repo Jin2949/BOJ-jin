@@ -1,6 +1,7 @@
 from collections import deque
+import sys
 
-V,E = map(int,input().split())
+V,E = map(int,sys.stdin.readline().split())
 
 indegree = [0]*(V+1)
 
