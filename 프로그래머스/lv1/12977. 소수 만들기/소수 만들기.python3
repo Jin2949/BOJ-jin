@@ -1,0 +1,21 @@
+def solution(nums):
+    cnt = 0
+
+    for i in range(len(nums)):
+        for j in range(i+1,len(nums)-1):
+            for k in range(j+1,len(nums)):
+                rlt = 0
+                rlt += sum([nums[i], nums[j], nums[k]])
+                x = int(rlt/2)
+
+                check = 0
+                if x<2:
+                    cnt +=1
+                else:
+                    for l in range(2,x+1):
+                        if rlt % l ==0:
+                            check = 1
+                if not check:
+                    cnt += 1
+
+    return cnt
