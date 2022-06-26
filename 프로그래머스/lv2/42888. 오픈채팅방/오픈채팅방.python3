@@ -1,0 +1,21 @@
+def solution(record):
+    dict = {}
+
+    for i in record:
+        a = list(map(str,i.split()))
+        if a[0] == "Enter" or a[0] == "Change":
+            dict[a[1]] = a[2]
+
+
+    rlt = []
+    word = ''
+    for i in  record:
+        b = list(map(str,i.split()))
+        if b[0] == "Enter":
+            word = dict[b[1]] + "님이 들어왔습니다."
+            rlt.append(word)
+        elif b[0] == "Leave":
+            word = dict[b[1]] + "님이 나갔습니다."
+            rlt.append(word)
+    
+    return rlt
