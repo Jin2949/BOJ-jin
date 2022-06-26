@@ -1,0 +1,8 @@
+def solution(numbers):
+    rlt = 45
+    sum = 0
+    for i in numbers:
+        sum += i
+
+    answer = rlt - sum
+    return answer
