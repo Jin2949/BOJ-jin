@@ -1,0 +1,7 @@
+def solution(participant, completion):
+    import collections
+
+    rlt = collections.Counter(participant)- collections.Counter(completion)
+    
+    answer = list(rlt)[0]
+    return answer
