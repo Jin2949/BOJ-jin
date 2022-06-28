@@ -1,0 +1,24 @@
+def solution(n, lost, reserve):
+    new_lost = []
+
+    lost.sort()
+    reserve.sort()
+
+    for j in lost:
+        if j not in reserve:
+            new_lost.append(j)
+        else:
+            reserve.pop(reserve.index(j))
+
+
+    rlt = n-len(new_lost)
+
+    for i in new_lost:
+        if i-1 in reserve:
+            rlt += 1
+            reserve.pop(reserve.index(i-1))
+
+        elif i+1 in reserve:
+            rlt += 1
+            reserve.pop(reserve.index(i+1))
+    return rlt
